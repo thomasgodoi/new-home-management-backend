@@ -27,6 +27,18 @@ public class Home {
     @Column(name = "home_longitude")
     private float homeLongitude;
 
+    @Column(name = "home_price")
+    private float homePrice;
+
+    @Column(name = "home_finish_month")
+    private String homeFinishMonth;
+
+    @Column(name = "home_finish_year")
+    private String homeFinishYear;
+
+    @Column(name = "home_constructor")
+    private String homeConstructor;
+
     public Home(Long id) {
         this.idHome = id;
     }
