@@ -25,4 +25,9 @@ public class HomeService {
     public Home saveHome(Home home) {
         return homeRepository.save(home);
     }
+
+    public boolean deleteHome(Long id) {
+        homeRepository.deleteById(id);
+        return true;
+    }
 }

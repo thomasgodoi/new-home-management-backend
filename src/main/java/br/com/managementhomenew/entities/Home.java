@@ -31,10 +31,10 @@ public class Home {
     private float homePrice;
 
     @Column(name = "home_finish_month")
-    private String homeFinishMonth;
+    private int homeFinishMonth;
 
     @Column(name = "home_finish_year")
-    private String homeFinishYear;
+    private int homeFinishYear;
 
     @Column(name = "home_constructor")
     private String homeConstructor;

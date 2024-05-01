@@ -27,7 +27,7 @@ public class HomeController {
     public ResponseEntity<Optional<Home>> findHomeById(@PathVariable Long id) {
         try {
             Optional<Home> response = homeService.findById(id);
-            return new ResponseEntity<>(response, HttpStatus.OK);
+            return ResponseEntity.ok(response);
         } catch(Error e) {
             System.out.println("Error /home/find-by-id");
             System.out.println(e);
@@ -39,7 +39,7 @@ public class HomeController {
     public ResponseEntity<List<Home>> findAllHomes() {
         try {
             List<Home> response = homeService.findAll();
-            return new ResponseEntity<>(response, HttpStatus.OK);
+            return ResponseEntity.ok(response);
         } catch(Error e) {
             System.out.println("Error /home/find-all");
             System.out.println(e);
@@ -50,5 +50,10 @@ public class HomeController {
     @PostMapping("/save-home")
     public Home saveHome(@RequestBody Home home) {
         return homeService.saveHome(home);
+    }
+
+    @DeleteMapping("/delete-home/{id}")
+    public void deleteHome(@PathVariable("id") Long id) {
+            homeService.deleteHome(id);
     }
 }
